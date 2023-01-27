@@ -1,0 +1,36 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+// Custom Exception in java
+package com.mycompany.javap;
+
+/**
+ *
+ * @author 016pr
+ */
+class InvalidAgeExc extends Exception{
+    InvalidAgeExc(String s){
+        System.out.println(s);
+    }
+}
+public class Javap {
+
+    public static void main(String[] args) {
+        Javap obj=new Javap();
+        try{
+        obj.vote(10);
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+    public void vote(int age) throws InvalidAgeExc
+    {
+        if(age<18)
+        {
+             throw new InvalidAgeExc("Not eligible");
+            
+        }else
+            System.out.println("you are ok for voting!");
+    }
+    
+}
