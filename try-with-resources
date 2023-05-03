@@ -1,0 +1,31 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+// try with resource
+public class Main implements AutoCloseable {
+
+    public void open() {
+        System.out.println("Opening resource");
+    }
+
+    @Override
+    public void close() {
+        System.out.println("Closing resource");
+    }
+    public static void main(String[] args) {
+    try (Main resource = new Main()) {
+        resource.open();
+        // use resource here
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
+}
+//Opening resource
+//Closing resource
+
